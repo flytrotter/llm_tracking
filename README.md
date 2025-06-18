@@ -51,25 +51,26 @@ pip install fastapi uvicorn requests python-dotenv ngrok
 Create a `.env` file in the project root with your configuration:
 
 ```env
-# Helicone Configuration
-HELICONE_API_KEY=your_helicone_api_key_here
-HELICONE_WEBHOOK_SECRET=your_webhook_hmac_secret_here
+EMAIL_USERNAME=<sender email>
+EMAIL_PASSWORD=<apps password>
+ALERT_EMAIL_TO=<recipient email>
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
 
-# Spending Limits (in USD)
-HOURLY_SPEND_LIMIT=5.00
-DAILY_SPEND_LIMIT=50.00
-MONTHLY_SPEND_LIMIT=500.00
+HELICONE_API_KEY=<from helicone>
+HELICONE_WEBHOOK_SECRET=<configure helicone webhook>
+HOURLY_SPEND_LIMIT=10.00
 
-# Server Configuration
-PORT=8000
-HOST=0.0.0.0
-
-# Alert Configuration (optional)
-ALERT_EMAIL=your-email@example.com
+# Slack Configuration
 SLACK_WEBHOOK_URL=your_slack_webhook_url_here
 
-# ngrok Configuration (for testing)
-NGROK_AUTHTOKEN=your_ngrok_auth_token_here
+# Database
+DATABASE_PATH=spending_monitor.db
+
+NGROK_AUTHTOKEN=<for testing>
+
+HOST=<your host>
+PORT=<your port>
 ```
 
 ### Step 3: Setup Helicone Webhook
